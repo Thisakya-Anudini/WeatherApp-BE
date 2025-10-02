@@ -1,34 +1,125 @@
-# Weather App - Backend
 
-## Overview
+# Weather App 🌦️ - Frontend
 
-The **Backend** of the **Weather App** is built using **Node.js** and **Express.js**. It is responsible for handling API requests, fetching weather data from the **OpenWeather API**, and serving it to the **Frontend**. This backend also handles user authentication and the **Two-Factor Authentication (2FA)** process.
+## About The Project
 
-The backend is designed to communicate seamlessly with the frontend, process requests efficiently, and ensure secure login with 2FA.
+The **Weather App** provides users with real-time weather updates, featuring a clean and interactive interface to check weather conditions across cities worldwide. Built with the **MERN stack** (MongoDB, Express.js, React.js, and Node.js), the app allows users to securely log in, view personalized weather data, and receive up-to-date weather forecasts.
+
+Key functionalities include secure authentication via **Auth0**, live weather data fetched from the **OpenWeatherMap API**, and a responsive user interface for both mobile and desktop devices.
+
+### Built With
+
+- **Frontend**: React.js, Vite, TailwindCSS  
+- **Backend**: Node.js, Express.js (refer to the backend repository)  
+- **Authentication**: Auth0 (with optional Multi-Factor Authentication)  
+- **Weather Data**: OpenWeatherMap API  
+- **Caching**: NodeCache for performance optimization  
+
+
+## Key Features
+
+- 🌍 **Global Coverage**: View weather conditions for cities around the world  
+- 🔐 **Secure Authentication**: Auth0 login with optional MFA  
+- 🌡️ **Real-Time Weather Data**: Temperature, humidity, wind speed, and more  
+- 📱 **Responsive Design**: Optimized for mobile, tablet, and desktop  
+- ⚡ **Efficient Caching**: Reduces API calls with 5-minute cache window  
 
 ---
 
-## Features
+## Getting Started
 
-- **Weather Data API**: Fetches live weather data from the OpenWeather API.
-- **User Authentication**: Handles secure user login and registration.
-- **Two-Factor Authentication (2FA)**: Uses **Google Authenticator** to enhance security.
-- **API Routes**: Defines routes to handle weather data requests and user-related actions.
-
----
-
-## Installation
+Follow these steps to get the Weather App up and running locally.
 
 ### Prerequisites
 
-Ensure you have the following installed:
+Make sure you have the following installed:
 
-- **Node.js** (v14 or higher)
-- **npm** (Node Package Manager)
+- [Node.js](https://nodejs.org/) (v14 or higher)  
+- npm (Node Package Manager)  
+- Git  
+- Auth0 Account  
 
-### Clone the Repository
+---
 
-Clone the **backend** repository to your local machine:
+### Setup Instructions
+
+#### 1. Clone the Repositories
 
 ```bash
+git clone https://github.com/Thisakya-Anudini/WeatherApp-FE
 git clone https://github.com/Thisakya-Anudini/WeatherApp-BE
+```
+
+#### 2. Install Dependencies
+
+**Backend:**
+
+```bash
+cd weatherapp_backend  
+npm install
+```
+
+**Frontend:**
+
+```bash
+cd weatherapp_frontend  
+npm install
+```
+
+#### 3. Set Up Environment Variables
+
+Create a `.env` file in the **backend** directory:
+
+```env
+API_KEY=OpenWeatherMap API key for fetching weather data
+AUTH0_DOMAIN= Auth0 Domain 
+API_IDENTIFIER=The identifier (audience) for your API 
+FRONTEND_URL=URL of your frontend app 
+PORT=The port the backend server will run on
+
+```
+
+Create a `.env` file in the **frontend** directory:
+
+```env
+VITE_AUTH0_DOMAIN=your_auth0_domain 
+VITE_AUTH0_CLIENT_ID=Auth0 Client ID  
+VITE_BACKEND_URL=Backend URL
+
+```
+
+Create a `.env` file in the **frontend** directory and add any necessary variables.
+
+#### 4. Run the Application
+
+**Backend:**
+
+```bash
+cd weatherapp_backend
+npm start
+```
+
+Backend will run at: `http://localhost:5000`
+
+**Frontend:**
+
+```bash
+cd weatherapp_frontend 
+npm run dev
+```
+
+Frontend will run at: `http://localhost:5173`
+
+
+---
+
+## Technologies and Tools Used
+
+- **React.js** – Dynamic frontend UI  
+- **Vite** – Fast build tool for development  
+- **TailwindCSS** – Utility-first CSS framework  
+- **Node.js** – Backend runtime environment  
+- **Express.js** – API routing and server logic  
+- **Auth0** – Authentication and MFA  
+- **OpenWeatherMap API** – Real-time weather data  
+- **NodeCache** – In-memory caching for performance  
