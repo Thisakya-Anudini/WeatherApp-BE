@@ -9,12 +9,13 @@ const app = express();
 
 // Middleware
 app.use(express.json());  // Built-in Express method to parse JSON bodies
-app.use(cors());  // Enable CORS for cross-origin requests
+app.use(cors({ origin: process.env.FRONTEND_URL }));  // Enable CORS for cross-origin requests
 
 // Routes
 app.use("/api/weather", weatherRouter);  // All weather-related routes are prefixed with /api/weather
 
 // Start server
-app.listen(5000, () => {
-  console.log("Server started on port 5000");
+const port = process.env.PORT || 5000;
+app.listen(port, () => {
+  console.log(`Server running on port ${port}`);
 });
